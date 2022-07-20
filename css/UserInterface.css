@@ -1,0 +1,321 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: 'Work Sans', sans-serif;
+    background-color: #292b2c;
+}
+html {
+    height: 100vh   ;
+    scroll-behavior: smooth;
+}
+
+/* Start UserInterface */
+
+
+
+/* Start .navbar */
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+.back-image {
+    background-image: url(../images/hero-image.jpg);
+    background-size:cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    height: 100vh;
+    /* overflow: hidden; */
+}
+@media(max-width:768px) {
+    .back-image {
+        background-size: 0px;
+        height: 50vh;
+    }
+}
+.back-image::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
+.back-image > * {
+    z-index: 2;
+    position: relative;
+}
+header .navbar {
+    display: flex;
+    justify-content: space-between;
+    height: 50px;
+    align-items: center;
+}
+header img {
+    height: 30px;
+}
+header .navbar .ul {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+}
+header .navbar .ul .li .a{
+    text-decoration: none;
+    color: white;
+    font-size: 0.8rem;
+    padding: 10px;
+    margin: 0 6px;
+    position: relative;
+    transition: .5s;
+}
+header .navbar .ul .li .a::before{
+    content: '';
+    position: absolute;
+    background-color: white;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    transition: .3s;
+}
+header .navbar .ul .li .a:hover::before {
+    width: calc(100% - 20px);
+}
+header .navbar #search {
+    display: none;
+    position: relative;
+}
+@media(max-width : 768px) {
+    header .navbar #search{
+        display: block;
+    }
+    header .navbar .ul{
+        display: none;
+    } 
+}
+.search-div-center {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+}
+.search-div {
+    width: 250px;
+    height: 100%;
+    /* background-color: red; */
+    text-align: center;
+    position: relative;
+
+}
+.search-div .icon-search {
+    position: absolute;
+    bottom: 6px;
+    left: 10px;
+    color: #444 ;
+    padding: 8px;
+    /* background-color: red; */
+    border-radius: 30px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+.search-navbar {
+    margin-top: 20px;
+    padding-left: 50px;
+    border: 1px solid #dfe1e5;
+    background-color: #f5f6f8;
+    border-radius: 50px;
+    min-width: 150px;
+    max-width: 250px;
+    width: 250px;
+    height: 46px;
+    outline: 0;
+}
+/* End .navbar */
+
+
+
+
+
+/* Start Hero Section */
+.hero-section {
+    display: flex;
+    justify-content: center;
+    padding-top: 60px;
+    z-index: 1;
+}
+.hero-section .container .flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    /* background-color: #919199; */
+    margin-top: 12%;
+}
+.hero-section .container .flex .card {
+    
+    margin: 0 20px;
+    max-width: 50%;
+    /* background-color: #717171; */
+}
+.hero-section .container .flex .card img {
+    height: 230px;
+    margin-left: 20px;
+    align-items: center;
+}
+@media(max-width: 768px){
+    .hero-section .container .flex .card img {
+        display: none;
+    }
+    .hero-section .container .flex .card div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.hero-section .container .flex .card h1 {
+    font: bold;
+    margin-bottom: 25px;
+    color: white;
+}
+.hero-section .container .flex .card p{
+    margin-bottom: 60px;
+    color: white;
+
+}
+.btn {
+    text-align: center;
+}
+.btn-hover {
+    width: 120px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+    margin: 30px;
+    height: 38px;
+    text-align:center;
+    border: none;
+    background-size: 300% 100%;
+    border-radius: 50px;
+    transition: all .4s ease-in-out;
+}
+.btn-hover:hover {
+    background-position: 100% 0;
+    transition: all .4s ease-in-out;
+}
+
+.btn-hover:focus {
+    outline: none;
+}
+
+.btn-hover.color-1 {
+    background-image: linear-gradient(to right, black, white, white, black);
+    box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.75);
+}
+
+/* End Hero Section */
+
+
+
+
+
+
+/* Start Card Section */
+.container .card-section{
+    /* background-color: forestgreen; */
+    display: grid;
+    grid-template-columns: repeat(auto-fill , minmax(250px, 1fr));
+    grid-gap: 50px;
+    width: 90%;
+    margin: 5rem auto 5rem auto;
+}
+.container h5 {
+    display: block;
+    width: 90%;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+    position: relative;
+    color: white;
+}
+.container h5::after {
+    content: "";
+    top: 49%;
+    width:100%;
+    margin-left: 10px;
+    height: 2px;
+    position: absolute;
+    background-color: white;
+}
+.container .card-section .card {
+    /* background-color: rgb(169, 32, 32); */
+    border-radius: 5px;
+    padding: 15px;
+    cursor: pointer;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.container .card-section .card h3 {
+    height: 100%;
+}
+.container .card-section .card span {
+    display: inline-block;
+    padding: .5rem;
+    background-color: linear-gradient(to right, black, white, white, black);
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.75);
+    border-radius: 5px;
+    font-weight: 700;
+    margin-right: .5rem;
+    margin-top: .5rem;
+}
+.card-hover {
+    font-weight: 600;
+    color: #fff;
+    text-align:center;
+    border: none;
+    background-size: 400% 100%;
+    transition: all .4s ease-in-out;
+}
+.card-hover:hover {
+    background-position: 100% 0;
+    transition: all .4s ease-in-out;
+}
+.card-hover:focus {
+    outline: none;
+}
+.card-hover.color-1 {
+    background-image: linear-gradient(to right, black, white, white, black);
+    box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.75);
+}
+.container .card-section .card button {
+    cursor: pointer;
+}
+
+/* End Card Section */
+
+
+
+
+
+/* Start Footer */
+footer {
+    bottom:0;
+    width:100%;
+}
+footer .container .footer {
+    text-align: center;
+    padding: 40px;
+}
+/* End Footer */
+
+/* End UserInterface */

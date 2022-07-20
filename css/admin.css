@@ -1,0 +1,196 @@
+body{
+    background-color: rgba(10, 9, 8, 0.905);
+ }
+
+
+.admin-tab {
+  margin-top: 5%;
+  margin-bottom: 10%;
+}
+
+
+/* barchoix */
+.barchoix {
+    /* position: absolute; */
+    width: 350px;
+    height: 100%;
+    text-align: center;
+    /* left: -300px; */
+    /* transition: .7s; */
+    
+}
+
+
+  .barchoix ul li {
+    /* list-style: none; */
+    color: #fff;
+    font-size: 20px;
+    padding: 26px 24px;
+    font-family: monospace;
+  }
+
+  .barchoix a{
+    text-decoration: none;
+  }
+
+
+
+
+.link1:hover {
+    cursor: pointer;
+background: #000000c0;
+color: aliceblue;
+transition: .7s;
+}
+
+.link2:hover {
+  cursor: pointer;
+background: #413f4bd9;
+color: aliceblue;
+transition: .7s;
+}
+
+
+.link3:hover {
+  cursor: pointer;
+background: #ffffff;
+color: black;
+transition: .7s;
+}
+
+
+
+.link4:hover {
+  cursor: pointer;
+background: #707070c1;
+color: aliceblue;
+transition: .7s;
+}
+
+
+.link5:hover {
+  cursor: pointer;
+background: #273f7eb0;
+color: aliceblue;
+transition: .7s;
+}
+
+
+
+
+
+
+
+
+
+
+  /* bar-operations */
+  .bar-operations{
+   
+    height: 100%;
+    text-align: center;
+    /* margin-top: 2%; */
+  }
+  
+  .bar-operations table{
+  
+    padding: 1px;
+    border-right: none;
+  
+  }
+
+  .bar-operations td {
+    color: rgb(0, 0, 0); padding: 20px;
+  }
+
+  .tr-titles td{
+    border: rgb(0, 0, 0);
+    font-size: large;
+    color: #f5f6f8;
+    font-weight: bold;
+  }
+
+
+
+   /* Buttons style By AZIZ Sensei */
+.btn {
+    text-align: center;
+}
+.btn-hover {
+    width: 70px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+    margin: 1px;
+    /* height: 1px; */
+    text-align:center;
+    border: none;
+    background-size: 300% 100%;
+    border-radius: 50px;
+    transition: all .4s ease-in-out;
+}
+.btn-hover:hover {
+    background-position: 100% 0;
+    transition: all .4s ease-in-out;
+}
+
+.btn-hover:focus {
+    outline: none;
+}
+
+
+.btn-hover.color-1 {
+  background-image: linear-gradient(to right, black, white, rgb(25, 0, 255), black);
+  box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.75);
+}
+
+.btn-hover.color-2 {
+    background-image: linear-gradient(to right, black, white, red, black);
+    box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.75);
+}
+
+
+
+
+/* Search bar by AZIZ SAMA */
+
+.search-div-center {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+}
+.search-div {
+  width: 250px;
+  height: 100%;
+  /* background-color: red; */
+  text-align: center;
+  position: relative;
+
+}
+.search-div .icon-search {
+  position: absolute;
+  bottom: 6px;
+  left: 10px;
+  color: #444 ;
+  padding: 8px;
+  /* background-color: red; */
+  border-radius: 30px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+.search-navbar {
+  margin-top: 60px;
+  padding-left: 50px;
+  border: 1px solid #dfe1e5;
+  background-color: #f5f6f8;
+  border-radius: 50px;
+  min-width: 150px;
+  max-width: 250px;
+  width: 250px;
+  height: 46px;
+  outline: 0;
+}

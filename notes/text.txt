@@ -1,0 +1,119 @@
+----- Back-end view -----
+
+TABLES :
+1-users( *id_User [ai/unique] / name / familyname / username / email / password);
+
+2-admins(*id_Admin [ai/unique] / username / email / password);
+
+3-favoUsers(*id_favoUser [ai/unique] / 'id_Book' / 'id_User');
+
+4-books(*id_Book / nomBook / 'nomAuthor' / 'nomCatigory' / nbrDownload);
+
+5-catigory(*id_catigory [ai/unique] / nomCatigory / nbrbook / dateAjoute / dateUpdate );
+
+6-authors(*id_author [ai/unique] / nomAuthor / dateAjoute / dateUpdate);
+
+7-downloads (*idDown [ai/unique] / 'id_book' / 'id-User' )
+
+TABLES( sql_reqet manipulation ) :
+
+1- users 
+	1.1- add_user in inscription 
+		1.1.1- condition :
+			- email unique ( see if the email of user not found in the users table )
+				- if reqet(select count email=this.email from users) == 0 is true 
+				- else affiche alert " this email is alredy use by someone "
+			- username unique ( if the user name are found we say to user to change the usernam )
+				- if reqet(select count email=this.email from users) == 0 is true 
+				- else tell the user to chenge his username 
+			- strong password ( accept a password only chiffre and caracter ( symbole not require ))
+				- if passwd contain number and caracter 
+				- else tell the user to change passwd
+		1.1.2- add-qury ( insert into users this.user )
+
+	1.2- delete_user 
+		1.2.1- condition :
+			- tell the user to confirme the opiration 
+			- delete all historique of user and favorite 
+			- delete the user account 
+		1.2.2- delete-qury (delete from users where id_user= this.id_user)
+
+	1.3- update_account 
+		1.3.1- condition :
+			- update only with passwd 
+		1.3.2- update qury ( update attribute=value where id_User = this.user )
+
+2- admins 
+	2.1- add
+		2.1.1- old admin enter the information of the newer admin (usernam,email,passwd)
+			- add-qury ( insert into admins this.admin )
+	2.2- update_account 
+		2.2.1- condition :
+			- update with passwd only 
+		2.2.2-update qury ( update attrubute=value where id_Admin=this.id_admin ) 
+	2.3- delete
+		2.3.1- condition : 
+			- tell the admin to confirm the operation 
+			- delete the admin 
+		2.3.2- delete qury (delete from admins where id_admin = this.id_admin )
+
+3- favoUsers 
+	3.1- add
+		3.1.1-condition :
+			- click the betton add to favory
+		3.1.2- add-fav qury (insert into favoUsers ( id_book/id_user ))
+	3.2- delete
+		3.2.2- condition :
+			- click the betton delete from favory 
+		3.2.3- delete qury (delete into favoUsers where id_favoUser = this.id_favoUser )
+
+4- books 
+	4.1- add
+		4.1.1- condition :
+			- book is unique 
+			-
+	4.2- delete
+	4.3- update
+5- catigory 
+	5.1- add
+	5.2- delete
+	5.3- update
+6- authors
+	6.1- add
+	6.2- delete
+	6.3- update 
+
+ACTION (sql_reqet fetch):
+
+1- user inscription then log 
+2- admin login
+3- user login 
+4- user open favory list 
+5- user open historique downloads
+6- user download a book
+7- user seach a book 
+8- user search a category 
+9- user search a author 
+10- load list of random books in main page  
+
+
+
+
+
+
+----- Front end view -----
+
+FUNCTIONS :
+
+Admins Function :
+1-add / update / delete book
+2-add / update / delete catigory
+3-add / update / delete authors
+4-delete users
+5-add admin
+
+Users Function :
+1-search book / author / catigory
+2-download book
+3-add / delete Favo book
+4-update / delete account
